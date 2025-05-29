@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Registro de Obras - Anémona</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="icon" href="Favicon/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #000000;
+      margin-top: 4px;
+      font-family: 'Inter', PPNeueMontreal-Book;
+		color: #000000
+    }
+
+    .obra, .compositor, .productor, .pregunta {
+      background: #403287;
+      border-radius: 10px;
+      padding: 1em;
+      margin-bottom: 1em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    button {
+      margin-top: 1em;
+      background-color: #EE3569;
+      color: #000000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background-color: #EA5E28;
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <!-- Header -->
+  <header id="header">
+    <img src="anemona-logo.png" alt="Anémona" style="max-width: 30%; height: auto;" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="formulariodeobras.html" class="active">Registro de Obras</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Main -->
+    <section id="main" class="wrapper">
+      <div class="inner">
+        <h1 class="major">Información de obras</h1>
+        <label for="numObras">¿Cuántas obras deseas registrar?</label>
+        <input type="number" id="numObras" min="1">
+        <button onclick="generarObras()">Generar formulario</button>
+		  <div style="margin-bottom: 20px;"></div>
+       <form id="formularioObras" onsubmit="enviarFormulario(event)"></form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="wrapper alt">
+    <div class="inner">
+      <ul class="menu">
+        <li>&copy; Anémona. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function generarObras() {
+  const numObras = parseInt(document.getElementById('numObras').value);
+  const formulario = document.getElementById('formularioObras');
+  formulario.innerHTML = ''; // Limpia el formulario
+
+  const contenedorObras = document.createElement('div');
+  contenedorObras.id = 'contenedorObras';
+  formulario.appendChild(contenedorObras);
+
+  for (let i = 1; i <= numObras; i++) {
+    const obraDiv = document.createElement('div');
+    obraDiv.className = 'obra';
+    obraDiv.innerHTML =
+      `<h2>Obra #${i}</h2>
+      <label>Título de la obra</label><input type="text" name="titulo_${i}" required>
+      <label>Género musical</label><input type="text" name="genero_${i}" required>
+      <label>Duración</label><input type="text" name="duracion_${i}" required>
+      <label>¿Está publicada? ¿Dónde?</label><input type="text" name="publicacion_${i}">
+      <label>ISRC</label><input type="text" name="isrc_${i}">
+      <label>ISWC</label><input type="text" name="iswc_${i}">
+      <div id="compositores_${i}"></div>
+      <button type="button" onclick="agregarCompositor(${i})">+ Agregar compositor</button>
+      <div id="productores_${i}"></div>
+      <button type="button" onclick="agregarProductor(${i})">+ Agregar productor</button>
+      <label>¿Tienes una versión instrumental de tu master?</label>
+      <select name="version_instrumental_${i}" required>
+        <option value="sí">Sí</option>
+        <option value="no">No</option>
+      </select>
+      <label>¿Tienes una versión TV Mix (Instrumental y Backing Vocals)?</label>
+      <select name="version_tv_mix_${i}" required>
+        <option value="sí">Sí</option>
+        <option value="no">No</option>
+      </select>`;
+    contenedorObras.appendChild(obraDiv);
+  }
+
+  const ayudaDiv = document.createElement('div');
+  ayudaDiv.className = 'pregunta';
+  ayudaDiv.innerHTML =
+    `<h3>¿Necesitas ayuda para encontrar tu información?</h3>
+    <p>No dudes en contactarnos para darte una cotización personalizada.</p>
+    <p><strong>Correo:</strong> katearaos@anemonasync.com</p>`;
+  formulario.appendChild(ayudaDiv);
+
+  const datosContacto = document.createElement('div');
+  datosContacto.innerHTML =
+    `<label for="nombre">Nombre completo</label>
+     <input type="text" id="nombre" name="nombre" required>
+
+     <label for="correo">Correo electrónico</label>
+     <input type="email" id="correo" name="correo" required>
+
+     <button type="submit">Enviar formulario</button>`;
+  formulario.appendChild(datosContacto);
+
+  formulario.onsubmit = enviarFormulario;
+}
+
+  </script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/formulario.js"></script>
+</body>
+</html>

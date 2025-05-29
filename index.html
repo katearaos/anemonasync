@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<html>
+	<head>
+		<title>Anémona</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="icon" href="Favicon/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			@font-face {
+				font-family: 'PPNeueMontreal-Bold';
+				src: url('fonts/PPNeueMontreal-Bold.otf') format('truetype');
+			}
+			@font-face {
+				font-family: 'PPNeueMontreal-Book';
+				src: url('fonts/PPNeueMontreal-book.otf') format('truetype');
+			}
+			body {
+				background-color: #FBF6E5;
+				color: #5A2E8E;
+				font-family: 'PPNeueMontreal-Book', sans-serif;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				font-family: 'PPNeueMontreal-Bold', sans-serif;
+			}
+			h2#conoce-equipo {
+				color: #000000;
+    			background-color: #FBF6E5;
+				padding: 0; /* elimina padding para que no desplace */
+    			border-radius: 0; /* igual que otros títulos */
+				text-align: left;
+				max-width: none; /* que tome ancho completo */
+				margin: 0 0 1em 0; /* igual margen que h2 normal */
+    			font-size: 1.6em; /* o el tamaño que tenga el otro h2 */
+    			font-weight: 700; /* asegurar bold igual que otros h2 */
+			}
+            h2#artistas {
+				color: #000000; /* Cambia el color del h2 a negro */
+			}
+			.wrapper.style1 {
+				background-color: #FBF6E5;
+			}
+			.wrapper.style2 {
+				background-color: #6FC0D6;
+				color: #403287;
+			}
+			.wrapper.style3 {
+				background-color: #EA5E28;
+				color: #FBF6E5;
+                }
+			.wrapper.style3 {
+				background-color: #EA5E28;
+				color: #FBF6E5;
+			}
+			.wrapper.style1-alt {
+				background-color: #403287;
+				color: #FBF6E5;
+			}
+            .wrapper.style4 {
+				background-color: #EE3569;
+				color: #FBF6E5;
+			}
+			.button {
+				background-color: #EE3569;
+				color: #FBF6E5;
+				border: none;
+			}
+			.button:hover {
+				background-color: #c42e58;
+			}
+			a {
+				color: #EE3569;
+			}
+			a:hover {
+				color: #EA5E28;
+			}
+			.icon {
+				color: #403287;
+			}
+			label[for="name"],
+			label[for="email"],
+			label[for="message"],
+			.contact h3,
+			.contact ul li {
+				color: #403287;
+			}
+			input[type="text"],
+			textarea {
+				color: #403287;
+				border: 2px solid #403287;
+				background-color: #FBF6E5;
+				font-family: 'PPNeueMontreal-Book', sans-serif;
+			}
+			input[type="text"]::placeholder,
+			textarea::placeholder {
+				color: #a7a1c5;
+			}
+			.team-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* menos espacio entre imágenes */
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+
+.team-images .team-member {
+  flex: 1 1 280px;         /* Crece y encoge, con ancho base 280px */
+  max-width: 280px;        /* Para limitar el ancho máximo */
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;     /* Espacio abajo para cuando bajen */
+}
+
+.team-images img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #6FC0D6;
+}
+
+.team-images .team-member .text {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  color: white;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.team-images .team-member:hover .text {
+  opacity: 1;
+}
+
+
+			footer {
+				background-color: #5A2E8E; /* Color ajustado */
+			}
+            
+		</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Bienvenidxs</a></li>
+							<li><a href="#one">¿Quiénes somos?</a></li>
+							<li><a href="#two">¿Qué hacemos?</a></li>
+							<li><a href="#dot">Catálogo</a></li>
+							<li><a href="#three">Cóntáctanos</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<div class="inner" style="text-align: center;">
+					<img src="anemona-logo.png" alt="Anémona" style="max-width: 80%; height: auto;" />
+					<p>mexa sync agency.</p>
+					<ul class="actions"> </ul>
+				</div>
+			</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Sumerge tu música en un nuevo mundo de oportunidades</h2>
+									<p>Anémona es la primera agencia de sincronización musical en México. Nuestro objetivo es empoderar a artistas y facilitar licencias musicales justas, creativas y estratégicas para medios audiovisuales, democratizando la música.</p>
+									<p>¿Eres artista independiente y te gustaría ser considerado para ser representado por Anémona?</p>
+									<ul class="actions">
+										<li><a href="formulario.html" class="button">Llena el formulario</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+				</section>
+						<section class="wrapper style1 fade-up">
+							<div class="inner">
+								<h2 id="conoce-equipo">Conoce al equipo</h2>
+								<p>Estamos comprometidos con la música y el talento, aquí te presentamos al equipo de Anémona.</p>
+							</div>
+						</section>
+				
+			<div class="full-width-section">
+				<div class="team-images">
+					<div class="team-member">
+					<img src="kate.jpg" alt="Kate" />
+					<div class="text">Kate - CEO, Productora, Project Manager. Me imagino pelis con mis canciones favoritas. Abogada INFJ  </div>
+				</div>
+				<div class="team-member">
+					<img src="rodrigo.jpg" alt="Rodrigo" />
+					<div class="text">Ro - Compositor, productor y supervisor musical. Amante del café y alma vieja. Mediador INFP </div>
+				</div>
+					<div class="team-member">
+					<img src="sanch.jpg" alt="Sanch" />
+					<div class="text">Sanch - Productor, director musical, y baterista. Amo coleccionar música. Arquitecto INTJ </div>
+				</div>
+			</div>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+					<h2>¿Qué hacemos?</h2>
+					<div class="features">
+						<section>
+							<span class="icon solid major fa-headphones"></span>
+							<h3>CURACIÓN MUSICAL</h3>
+							<p>Seleccionamos cuidadosamente canciones que conectan con cada oportunidad audiovisual. Nos especializamos en encontrar el sonido perfecto que amplifique el impacto deseado.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-dice-one"></span>
+							<h3>ONE-STOP</h3>
+							<p>Facilitamos el proceso de licenciamiento ofreciendo obras completamente limpias. Al centralizar derechos de autor y master. Con el objetivo de que todo fluya sin obstáculos legales ni demoras.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-compact-disc"></span>
+							<h3>DISCO</h3>
+							<p>Nuestro catálogo vive en DISCO, la herramienta preferida por la industria para descubrir y licenciar música. Usamos esta plataforma para compartir playlists limpias, organizar metadata y facilitar el acceso a nuestras obras de forma rápida y profesional.</p>
+						</section>
+						<section>
+							<span class="icon solid major fa-film"></span>
+							<h3>SUPERVISIÓN MUSICAL PERSONALIZADA</h3>
+							<p>Colaboramos directamente contigo. Desde la selección y negociación de licencias hasta composiciones originales, te acompañamos en todo el proceso creativo y legal..</p>
+						</section>
+					</div>
+				</div>
+					</section>
+				
+				<section id="dot" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Conoce a nustros artistas</h2>
+									<p>Estamos construyendo un roster de talento fresco y potente. Pronto podrás conocer a nuestros artistas.</p>
+									<p>Sigue las novedades en nuestras redes sociales.</p>
+									<ul class="actions">
+									</ul>
+								</div>
+							</div>
+						</section>
+				</section>
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2 style="color: #000000;">¿Necesitas asistencia con la limpieza de una obra?</h2>
+					<p>Nos encantaría hablar contigoa, cotiza con nosotros servicios de supervisión musical personalizados.</p>
+					<div class="split style1">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Nombre</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Mensaje</label>
+										<textarea name="message" id="message" rows="5"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><a href="" class="button submit">mandar mensaje</a></li>
+								</ul>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li></li>
+								<li>
+									<h3>Email</h3>
+									<a href="#">katearaos@anemonasync.com</a>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Anémona. All rights reserved.</li><li> <a href="http://html5up.net"></a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
