@@ -114,11 +114,54 @@
 
 
 .team-images .team-member {
-  flex: 1 1 280px;         /* Crece y encoge, con ancho base 280px */
-  max-width: 280px;        /* Para limitar el ancho máximo */
+  flex: 1 1 280px;
+  max-width: 280px;
   position: relative;
   text-align: center;
-  margin-bottom: 30px;     /* Espacio abajo para cuando bajen */
+  margin-bottom: 30px;
+  overflow: hidden; /* Para que no se salga el overlay */
+}
+
+.team-images .team-member::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Sombra negra con transparencia */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1; /* Detrás del texto */
+  border-radius: 8px; /* Igual que la imagen */
+}
+
+.team-images .team-member:hover::after {
+  opacity: 1;
+}
+
+.team-images .team-member img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.team-images .team-member .text {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  color: white;
+  font-family: 'PPNeueMontreal-book', sans-serif;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 2; /* Encima del overlay */
+  padding: 0 10px;
+}
+
+.team-images .team-member:hover .text {
+  opacity: 1;
 }
 
 .team-images img {
@@ -192,7 +235,7 @@
 									<p>Anémona es la primera agencia de sincronización musical en México. Nuestro objetivo es empoderar a artistas y facilitar licencias musicales justas, creativas y estratégicas para medios audiovisuales, democratizando la música.</p>
 									<p>¿Eres artista independiente y te gustaría ser considerado para ser representado por Anémona?</p>
 									<ul class="actions">
-										<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSevY_vpvd7cEZbGqcV6ictd2MRbYTIaMHiP1RCM9cGDKN1n0w/viewform?usp=sharing&ouid=110574415001455560512" class="button" target="_blank">Llena el formulario</a></li>
+										<li><a href="formulario.html" class="button">Llena el formulario</a></li>
 									</ul>
 								</div>
 							</div>
